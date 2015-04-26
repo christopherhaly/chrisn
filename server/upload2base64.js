@@ -31,9 +31,14 @@ app.post('/api/photo',function(req,res){
   if(done==true){
     console.log(req.files);
     fs.readFile(req.files.userPhoto.path, function (err, data) {
- 	if (err) throw err;
+ 	if (err) {
+	 console.log(err)
+	} else {
+		
   	console.log(data.toString('base64'));
 	fs.unlinkSync(req.files.userPhoto.path);
+	}
+
 	}); 
     res.end();
   }

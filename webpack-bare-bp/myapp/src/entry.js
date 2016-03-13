@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+let Hello = () => <h1>Hello</h1>;
+
 let run = () => {
-	document.write("It works!!")
+	ReactDOM.render(<Hello />, document.getElementById('root'));
+	document.write("It works!")
 };
+
 
 run();

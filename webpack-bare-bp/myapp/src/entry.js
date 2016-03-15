@@ -1,5 +1,6 @@
 import React, {Component}from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router'
 
 export default class App extends Component {
   render() {
@@ -10,7 +11,12 @@ export default class App extends Component {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render((
+	<Router history={hashHistory}>
+		<Route path="/" component={App}>
+		</Route>
+	</Router>
+	), document.getElementById('root'));
 
 let run = () => {
 	document.write("It works!")
